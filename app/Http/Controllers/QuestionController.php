@@ -8,6 +8,10 @@ use App\Http\Resources\QuestionResource;
 
 class QuestionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('JWT', ['except' => ['index','show']]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -31,8 +35,17 @@ class QuestionController extends Controller
 
         //auth()->user()->questions()->create($request->all());
 
-        Question::create($request->all());
+
+        Question::create([
+            'title'=>$request->title,
+            'slug'=>str_slug($request->title),
+            'body'=>$request->body,
+            'category_id'=>$request->category_id,
+            'user_id'=>$request->user_id
+        ]);
         return response('Created',200);
+
+
 
 
 

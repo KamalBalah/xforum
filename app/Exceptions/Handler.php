@@ -4,6 +4,8 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\HttpFoundation\Response;
+use Tymon\JWTAuth\Exceptions\JWTException;
 
 class Handler extends ExceptionHandler
 {
@@ -48,6 +50,12 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        if ($exception instanceof JWTException)
+        {
+            return response([
+                'error'=>'Token is not Provided'
+            ],400);
+        }
         return parent::render($request, $exception);
     }
 }

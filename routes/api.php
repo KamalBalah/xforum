@@ -24,6 +24,7 @@ Route::group([
     Route::post('logout', 'AuthController@logout');
     Route::post('refresh', 'AuthController@refresh');
     Route::post('me', 'AuthController@me');
+    Route::post('/signup','AuthController@signup');
 
 });
 
@@ -32,3 +33,4 @@ Route::apiResource('/category','CategoryController');
 Route::apiResource('/question/{question}/reply','ReplyController');
 Route::post('/like/{reply}','LikeController@like');
 Route::delete('/like/{reply}','LikeController@unlike');
+
