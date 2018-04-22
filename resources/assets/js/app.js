@@ -9,7 +9,7 @@
 
 window.Vue = require('vue');
 import Vue from 'vue'
-
+window.axios = require('axios');
 //import Vuetify from 'vuetify'
 
 //Vue.use(Vuetify)
