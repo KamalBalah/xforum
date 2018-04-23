@@ -38,10 +38,7 @@
         },
         methods:{
             login(){
-                //alert("this is login")
-                axios.post('api/auth/login',this.form).then(res=>console.log(res.data))
-                .catch(console.log(error=>error.response.data));
-
+                User.login(this.form);
             }
         }
 

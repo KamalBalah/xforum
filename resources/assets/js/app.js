@@ -23,6 +23,13 @@ window.axios = require('axios');
 Vue.component('AppHome', require('./components/AppHome.vue'));
 
 import router from './router/router.js'
+
+import User from './helpers/User'
+window.User=User
+//User.logOut();
+console.log("LogInState:"+User.loggedIn());
+
+
 const app = new Vue({
     el: '#app',
     router
