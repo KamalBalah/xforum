@@ -16,12 +16,17 @@ class Token
     isValid(token)
     {
         const payload= this.payload(token);
+        var pass=false;
         if(payload)
         {
-            return payload.iss=="http://localhost/xforum/public/api/auth/login" ? true : false;
+
+            pass= payload.iss=="http://localhost/xforum/public/api/auth/signup" ? true : pass;
+            pass= payload.iss=="http://localhost/xforum/public/api/auth/login" ? true : pass;
+
+
         }
 
-        return false;
+        return pass;
     }
 
 }

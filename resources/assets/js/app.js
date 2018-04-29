@@ -25,7 +25,10 @@ Vue.component('AppHome', require('./components/AppHome.vue'));
 import router from './router/router.js'
 
 import User from './helpers/User'
-window.User=User
+window.User=User;
+
+window.EventBus=new Vue();
+
 //User.logOut();
 console.log("LogInState:"+User.loggedIn());
 

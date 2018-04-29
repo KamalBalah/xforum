@@ -2,6 +2,7 @@
     <div>
         <toolbar></toolbar>
         <router-view></router-view>
+        <p>content</p>
         <app-footer></app-footer>
     </div>
 

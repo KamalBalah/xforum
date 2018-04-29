@@ -13,11 +13,12 @@ class User
     {
         const tokenKey=res.data.access_token;
         const user=res.data.user;
-
         if(Token.isValid(tokenKey))
         {
             AppStorage.store(tokenKey,user);
+
         }
+        window.location= "/xforum/public";
     }
 
     loggedIn()
@@ -37,6 +38,7 @@ class User
     logOut()
     {
         AppStorage.clear();
+        window.location='/xforum/public';
     }
 
     userName()
