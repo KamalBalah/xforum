@@ -23,11 +23,12 @@
         data(){
             return {
                items:[
-                   {title:'Forum',to:'xforum',show:true},
-                   {title:'Ask Question',to:'ask',show:User.loggedIn()},
-                   {title:'Category',to:'category',show:User.loggedIn()},
-                   {title:'Login',to:'login',show:!User.loggedIn()},
-                   {title:'Signup',to:'signup',show:!User.loggedIn()},
+                   {title:'Home',to:'/',show:true},
+                   {title:'Forum',to:'/xforum',show:true},
+                   {title:'Ask Question',to:'/ask',show:User.loggedIn()},
+                   {title:'Category',to:'/category',show:User.loggedIn()},
+                   {title:'Login',to:'/login',show:!User.loggedIn()},
+                   {title:'Signup',to:'/signup',show:!User.loggedIn()},
 
                ],
                 isLoggedIn:User.loggedIn(),

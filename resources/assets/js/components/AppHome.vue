@@ -2,7 +2,6 @@
     <div>
         <toolbar></toolbar>
         <router-view></router-view>
-        <p>content</p>
         <app-footer></app-footer>
     </div>
 
@@ -13,6 +12,7 @@
     import Toolbar from './Toolbar'
     import AppFooter from './AppFooter'
     import Login from './login/Login'
+
 
 
     export default{
